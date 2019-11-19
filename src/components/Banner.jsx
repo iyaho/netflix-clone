@@ -16,7 +16,6 @@ const Logo = styled.img`
 
 const NavText = styled.ul`
   display: flex;
-  color: white;
   list-style: none;
   height: 100%;
   flex: 1;
@@ -25,6 +24,15 @@ const NavText = styled.ul`
 
 const NavTextItem = styled.li`
   margin-right: 20px;
+  color: #e5e5e5;
+
+  /* & > a{
+    color:#000;
+    font-style:bold;
+  } */
+  :hover{
+    color:#b3b3b3;
+  }
 `;
 
 const NavIcon = styled.ul`
@@ -38,6 +46,10 @@ const NavIconItem = styled.li`
   margin-right: 60px;
   & > img {
     height: 100%;
+  }
+  :hover{
+    border-radius:5px;
+    background-color:#b3b3b3;
   }
 `;
 
