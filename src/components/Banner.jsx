@@ -2,11 +2,16 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 68px;
   display: flex;
   padding: 20px 58px;
   box-sizing: border-box;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index: 1000;
 `;
 
 const Logo = styled.img`
@@ -16,6 +21,7 @@ const Logo = styled.img`
 
 const NavText = styled.ul`
   display: flex;
+  color: white;
   list-style: none;
   height: 100%;
   flex: 1;
@@ -25,14 +31,12 @@ const NavText = styled.ul`
 const NavTextItem = styled.li`
   margin-right: 20px;
   color: #e5e5e5;
-
-  :active{
-    color:#000;
-    font-style:bold;
+  &:hover {
+    color: #b3b3b3;
   }
-  :hover{
-    transition-duration: 2000ms;  
-    color:#b3b3b3;
+  &.select {
+    color: white;
+    font-weight: bold;
   }
 `;
 
@@ -48,10 +52,6 @@ const NavIconItem = styled.li`
   & > img {
     height: 100%;
   }
-  :hover{
-    border-radius:5px;
-    background-color:#b3b3b3;
-  }
 `;
 
 const Banner = props => {
@@ -59,7 +59,7 @@ const Banner = props => {
     <Wrapper>
       <Logo src="https://cdn.pixelprivacy.com/wp-content/uploads/2017/12/Netflix-Logo-1024x277.png" />
       <NavText>
-        <NavTextItem>홈</NavTextItem>
+        <NavTextItem className="select">홈</NavTextItem>
         <NavTextItem>TV 프로그램</NavTextItem>
         <NavTextItem>영화</NavTextItem>
         <NavTextItem>최신 등록 콘텐츠</NavTextItem>
