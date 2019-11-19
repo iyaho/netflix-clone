@@ -26,11 +26,12 @@ const NavTextItem = styled.li`
   margin-right: 20px;
   color: #e5e5e5;
 
-  /* & > a{
+  :active{
     color:#000;
     font-style:bold;
-  } */
+  }
   :hover{
+    transition-duration: 2000ms;  
     color:#b3b3b3;
   }
 `;
