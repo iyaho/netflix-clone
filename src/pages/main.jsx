@@ -10,12 +10,18 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div style={{marginTop:"45"}}>
+      <div style={{ marginTop: "43%" }}>
         <Banner />
         <Preview />
-        <div>
-          <MovieContainer />
-        </div>
+        <MovieContainer title="TV프로그램" movies={[
+          {title: "신서유기7"},
+          {title: "신서유기6"},
+          {title: "신서유기5"},
+          {title: "신서유기4"},
+          {title: "신서유기3"},
+          {title: "신서유기2"},
+          {title: "신서유기1"},
+          ]}/>
       </div>
     );
   }
