@@ -1,25 +1,38 @@
-import React from 'react';
-import Main from './pages/main'
-import {createGlobalStyle} from "styled-components"
+import React from "react";
+import Main from "./pages/Main";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { createGlobalStyle } from "styled-components";
+import Tv from "./pages/TV";
 
 const GlobalStyle = createGlobalStyle`
-  * { 
+  *{
     margin:0;
     padding:0;
   }
-  body {
-    background-color:black;
-  }
-`
+body{
+  background-color:black;
+}
 
+a {
+  text-decoration: none;
+  color: white;
+}
 
-function App() {
+`;
+
+const App = () => {
   return (
     <>
-      <GlobalStyle/>
-      <Main/>
+      <GlobalStyle />
+      <Router>
+        <Route path="/" exact>
+          <Main />
+        </Route>
+        <Route path="/tv" exact>
+          <Tv />
+        </Route>
+      </Router>
     </>
   );
 };
-
 export default App;
